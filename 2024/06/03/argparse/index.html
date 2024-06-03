@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="argparse 模块用于命令项选项与参数解析。 示例 123456789101112131415161718# test.pyimport argparseparser &#x3D; argparse.ArgumentParser(description&#x3D;&#x27;Demo of a argparse&#x27;)# 添加参数parser.add_argument(&#x27;--epochs&amp;#x27">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2024/06/03/argparse/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="argparse 模块用于命令项选项与参数解析。 示例 123456789101112131415161718# test.pyimport argparseparser &#x3D; argparse.ArgumentParser(description&#x3D;&#x27;Demo of a argparse&#x27;)# 添加参数parser.add_argument(&#x27;--epochs&amp;#x27">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-06-03T15:17:14.883Z">
+<meta property="article:modified_time" content="2024-03-19T16:12:44.901Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-argparse" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/06/03/argparse/" class="article-date">
+  <time class="dt-published" datetime="2024-06-03T15:17:14.883Z" itemprop="datePublished">2024-06-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>argparse 模块用于命令项选项与参数解析。</p>
+<p><strong>示例</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># test.py</span></span><br><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser(description=<span class="string">&#x27;Demo of a argparse&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加参数</span></span><br><span class="line">parser.add_argument(<span class="string">&#x27;--epochs&#x27;</span>,<span class="built_in">type</span>=<span class="built_in">int</span>,default=<span class="number">30</span>,<span class="built_in">help</span>=<span class="string">&quot;This is epochs&quot;</span>)</span><br><span class="line">parser.add_argument(<span class="string">&#x27;--batch&#x27;</span>,<span class="built_in">type</span>=<span class="built_in">int</span>,default=<span class="number">4</span>,<span class="built_in">help</span>=<span class="string">&quot;This is batch&quot;</span>)</span><br><span class="line"></span><br><span class="line">args=parser.parse_args()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(args)</span><br><span class="line"></span><br><span class="line">epochs=args.epochs</span><br><span class="line"></span><br><span class="line">batch=args.batch</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;show <span class="subst">&#123;epochs&#125;</span> <span class="subst">&#123;batch&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>使用命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python test2.py</span><br></pre></td></tr></table></figure>
+
+<p>输出如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Namespace(epochs=30, batch=4)</span><br><span class="line">show 30 4</span><br></pre></td></tr></table></figure>
+
+<p>使用命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python test2.py --epochs 100 --batch 10</span><br></pre></td></tr></table></figure>
+
+<p>输出如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Namespace(epochs=100, batch=10)</span><br><span class="line">show 100 10</span><br></pre></td></tr></table></figure>
+
+<p>使用命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python test2.py -h</span><br></pre></td></tr></table></figure>
+
+<p>输出如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">usage: test2.py [-h] [--epochs EPOCHS] [--batch BATCH]</span><br><span class="line"></span><br><span class="line">Demo of a argparse</span><br><span class="line"></span><br><span class="line">optional arguments:</span><br><span class="line">  -h, --help       show this help message and exit    </span><br><span class="line">  --epochs EPOCHS  This is epochs</span><br><span class="line">  --batch BATCH    This is batch</span><br></pre></td></tr></table></figure>
+
+<p><strong>add_argument 的参数</strong></p>
+<ul>
+<li><p><code>type=int</code>：类型</p>
+</li>
+<li><p><code>default=30</code>：默认值</p>
+</li>
+<li><p><code>help=This is epochs</code>：对参数的介绍信息（通过 <code>-h</code> 查看）</p>
+</li>
+<li><p><code>metavar=&#39;FILE&#39;</code>：帮助信息中用于表示这个参数的值应该是什么类型的。</p>
+</li>
+<li><p><code>action=&#39;store_true&#39;</code>：如果在命令行中出现了 <code>--if_fog</code> 这个参数，那么相应的变量（在这里是 <code>args.if_fog</code>）将被设置为 <code>True</code>。这是一种常见的用法，用于启用或禁用某些功能，而不需要显式地写出 <code>=True</code> 或 <code>=False</code>。</p>
+</li>
+<li><p><code>choices=[&#39;cifar10&#39;, &#39;cifar100&#39;]</code>：该参数的可选值</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/06/03/argparse/" data-id="clwz4774m0000qovqfhn89dxq" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/06/03/copy/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/06/03/jz/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">政治</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB/" rel="tag">工具类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82%E5%AD%A6%E6%97%81%E6%94%B6/" rel="tag">杂学旁收</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB/" style="font-size: 10px;">工具类</a> <a href="/tags/%E6%9D%82%E5%AD%A6%E6%97%81%E6%94%B6/" style="font-size: 10px;">杂学旁收</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/06/03/%E5%B7%A5%E5%85%B7%E7%B1%BB/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/06/03/time/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/06/03/threading/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/06/03/sys/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/06/03/socket/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
