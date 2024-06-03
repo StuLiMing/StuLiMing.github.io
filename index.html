@@ -4,17 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>Syu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+  <meta name="description" content="莫听穿林打叶声，何妨吟啸且徐行">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Syu">
 <meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Syu">
+<meta property="og:description" content="莫听穿林打叶声，何妨吟啸且徐行">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="StuLiMing">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Syu" type="application/atom+xml">
   
   
     <link rel="shortcut icon" href="/favicon.png">
@@ -39,7 +41,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">Syu</a>
       </h1>
       
     </div>
@@ -107,84 +109,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/jz/" data-id="clwz4h812000bdgvq3cq39bho" data-title="政治" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/jz/" data-id="clwz5a4240008igvqd8ec9txo" data-title="政治" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9D%82%E5%AD%A6%E6%97%81%E6%94%B6/" rel="tag">杂学旁收</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-build-a-blog" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/06/03/build-a-blog/" class="article-date">
-  <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/03/build-a-blog/">基于hexo和github搭建个人博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="用github搭建一个博客"><a href="#用github搭建一个博客" class="headerlink" title="用github搭建一个博客"></a>用github搭建一个博客</h1><h2 id="github以-username-github-io-为名字创建一个仓库"><a href="#github以-username-github-io-为名字创建一个仓库" class="headerlink" title="github以 username.github.io 为名字创建一个仓库"></a>github以 <code>username.github.io</code> 为名字创建一个仓库</h2><ul>
-<li>名字不能改</li>
-<li>类型必须是 <code>public</code></li>
-</ul>
-<h2 id="下载-node-js"><a href="#下载-node-js" class="headerlink" title="下载 node.js"></a>下载 node.js</h2><p><a target="_blank" rel="noopener" href="https://nodejs.org/en">官网</a>下载即可</p>
-<p>检查安装成功：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装-hexo"><a href="#安装-hexo" class="headerlink" title="安装 hexo"></a>安装 hexo</h2><ul>
-<li><p>安装 hexo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>初始化一个博客文件夹（在当前目录下）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init myblog </span><br><span class="line"><span class="built_in">cd</span> myblog</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装 npm</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装 deploy-git</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="将hexo部署到github"><a href="#将hexo部署到github" class="headerlink" title="将hexo部署到github"></a>将hexo部署到github</h2><ul>
-<li>修改 <code>_config.yml</code> 文件：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: https://github.com/YourgithubName/YourgithubName.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="hexo-常用命令"><a href="#hexo-常用命令" class="headerlink" title="hexo 常用命令"></a>hexo 常用命令</h2><ul>
-<li><code>hexo clean</code>：清除之前生成的东西</li>
-<li><code>hexo generate|g</code>：生成静态网页</li>
-<li><code>hexo deploy|d</code>：部署文章</li>
-<li><code>hexo new &lt;文章名&gt;</code>：新建一篇文章</li>
-</ul>
-<h2 id="常用网站"><a href="#常用网站" class="headerlink" title="常用网站"></a>常用网站</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://hexo.io/docs/">hexo文档</a></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/build-a-blog/" data-id="clwz4h80t0000dgvqb39a0v3f" data-title="基于hexo和github搭建个人博客" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB/" rel="tag">工具类</a></li></ul>
 
     </footer>
   </div>
@@ -257,70 +186,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/argparse/" data-id="clwz4h80w0001dgvqajod697p" data-title="argparse" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-json" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/06/03/json/" class="article-date">
-  <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/03/json/">json</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="json介绍"><a href="#json介绍" class="headerlink" title="json介绍"></a>json介绍</h2><p>json是一种轻量级的数据交互格式。主要功能：在各个编程语言中流通的数据格式，负责不同编程语言中的数据传递和交互。本质上是一个有特殊格式的字符串。</p>
-<p>python的列表与字典和json数据格式非常像。</p>
-<p>json数据示例：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot;Kangkang&quot;</span><span class="punctuation">,</span><span class="attr">&quot;age&quot;</span><span class="punctuation">:</span><span class="number">18</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">[</span><span class="punctuation">&#123;</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot;Kangkang&quot;</span><span class="punctuation">,</span><span class="attr">&quot;age&quot;</span><span class="punctuation">:</span><span class="number">18</span><span class="punctuation">&#125;</span><span class="punctuation">,</span><span class="punctuation">&#123;</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot;Maria&quot;</span><span class="punctuation">,</span><span class="attr">&quot;age&quot;</span><span class="punctuation">:</span><span class="number">16</span><span class="punctuation">&#125;</span><span class="punctuation">,</span><span class="punctuation">&#123;</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot;Jane&quot;</span><span class="punctuation">,</span><span class="attr">&quot;age&quot;</span><span class="punctuation">:</span><span class="number">15</span><span class="punctuation">&#125;</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="json库的方法"><a href="#json库的方法" class="headerlink" title="json库的方法"></a>json库的方法</h2><ul>
-<li><p><code>dumps()</code> 把py数据转为json数据</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">l=[&#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;Kangkang&quot;</span>,<span class="string">&quot;age&quot;</span>:<span class="number">18</span>&#125;,&#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;Maria&quot;</span>,<span class="string">&quot;age&quot;</span>:<span class="number">16</span>&#125;,&#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;Jane&quot;</span>,<span class="string">&quot;age&quot;</span>:<span class="number">15</span>&#125;]</span><br><span class="line">json_str=json.dumps(l)</span><br><span class="line"><span class="built_in">print</span>(json_str)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(json_str))				</span><br></pre></td></tr></table></figure>
-
-<p>输出：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#123;<span class="string">&quot;name&quot;</span>: <span class="string">&quot;\u5eb7\u5eb7&quot;</span>, <span class="string">&quot;age&quot;</span>: <span class="number">18</span>&#125;, &#123;<span class="string">&quot;name&quot;</span>: <span class="string">&quot;Maria&quot;</span>, <span class="string">&quot;age&quot;</span>: <span class="number">16</span>&#125;, &#123;<span class="string">&quot;name&quot;</span>: <span class="string">&quot;Jane&quot;</span>, <span class="string">&quot;age&quot;</span>: <span class="number">15</span>&#125;]</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;str&#x27;</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<p>为了使中文正常显示需要加参数 <code>ensure_ascii</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">json_str=json.dumps(l,ensure_ascii=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>loads()</code> 把json数据转为py数据</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">json_str=<span class="string">&#x27;[&#123;&quot;name&quot;:&quot;Kangkang&quot;,&quot;age&quot;:18&#125;,&#123;&quot;name&quot;:&quot;Maria&quot;,&quot;age&quot;:16&#125;,&#123;&quot;name&quot;:&quot;Jane&quot;,&quot;age&quot;:15&#125;]&#x27;</span></span><br><span class="line">l=json.loads(json_str)</span><br><span class="line"><span class="built_in">print</span>(l)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(l))</span><br></pre></td></tr></table></figure>
-
-<p>输出：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Kangkang&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">18</span>&#125;, &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Maria&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">16</span>&#125;, &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Jane&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">15</span>&#125;]</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;list&#x27;</span>&gt;</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/json/" data-id="clwz4h80z0003dgvq4w5o3y78" data-title="json" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/argparse/" data-id="clwz5a41v0000igvq8a688dk1" data-title="argparse" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -364,7 +230,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/functools/" data-id="clwz4h80z0004dgvq0jxe5cd2" data-title="partial" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/functools/" data-id="clwz5a41z0001igvqdot03as7" data-title="partial" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -418,7 +284,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/copy/" data-id="clwz4h8110008dgvq9hs78cwk" data-title="copy" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/copy/" data-id="clwz5a4210003igvq56cda2y2" data-title="copy" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -432,9 +298,9 @@
 
 
   
-    <article id="post-pathlib" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-build-a-blog" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/06/03/pathlib/" class="article-date">
+    <a href="/2024/06/03/build-a-blog/" class="article-date">
   <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
 </a>
     
@@ -446,7 +312,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/03/pathlib/">pathlib</a>
+      <a class="p-name article-title" href="/2024/06/03/build-a-blog/">基于hexo和github搭建个人博客</a>
     </h1>
   
 
@@ -454,70 +320,48 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="Path"><a href="#Path" class="headerlink" title="Path"></a>Path</h2><p>类，表示路径。</p>
-<p><code>Path(output_folder).mkdir(parents=True, exist_ok=True)</code>，创建目录 <code>output_folder</code>。</p>
-<ul>
-<li><code>parents=True</code>: 如果父目录不存在，也要创建父目录。如果设置为<code>True</code>，它将递归地创建所有必要的父目录，以确保目标路径存在。这对于创建多层嵌套的目录非常有用。</li>
-<li><code>exist_ok=True</code>: 如果设置为<code>True</code>，即使目录已经存在，也不会引发异常。这是为了防止在目录已经存在的情况下引发错误。</li>
-<li></li>
+        <h1 id="用github搭建一个博客"><a href="#用github搭建一个博客" class="headerlink" title="用github搭建一个博客"></a>用github搭建一个博客</h1><h2 id="github以-username-github-io-为名字创建一个仓库"><a href="#github以-username-github-io-为名字创建一个仓库" class="headerlink" title="github以 username.github.io 为名字创建一个仓库"></a>github以 <code>username.github.io</code> 为名字创建一个仓库</h2><ul>
+<li>名字不能改</li>
+<li>类型必须是 <code>public</code></li>
+</ul>
+<h2 id="下载-node-js"><a href="#下载-node-js" class="headerlink" title="下载 node.js"></a>下载 node.js</h2><p><a target="_blank" rel="noopener" href="https://nodejs.org/en">官网</a>下载即可</p>
+<p>检查安装成功：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装-hexo"><a href="#安装-hexo" class="headerlink" title="安装 hexo"></a>安装 hexo</h2><ul>
+<li><p>安装 hexo</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始化一个博客文件夹（在当前目录下）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init myblog </span><br><span class="line"><span class="built_in">cd</span> myblog</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装 npm</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装 deploy-git</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="将hexo部署到github"><a href="#将hexo部署到github" class="headerlink" title="将hexo部署到github"></a>将hexo部署到github</h2><ul>
+<li>修改 <code>_config.yml</code> 文件：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: https://github.com/YourgithubName/YourgithubName.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="hexo-常用命令"><a href="#hexo-常用命令" class="headerlink" title="hexo 常用命令"></a>hexo 常用命令</h2><ul>
+<li><code>hexo clean</code>：清除之前生成的东西</li>
+<li><code>hexo generate|g</code>：生成静态网页</li>
+<li><code>hexo deploy|d</code>：部署文章</li>
+<li><code>hexo new &lt;文章名&gt;</code>：新建一篇文章</li>
+</ul>
+<h2 id="常用网站"><a href="#常用网站" class="headerlink" title="常用网站"></a>常用网站</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/docs/">hexo文档</a></li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/pathlib/" data-id="clwz4h8120009dgvq849d3e97" data-title="pathlib" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/build-a-blog/" data-id="clwz5a4220004igvqe77wgsyn" data-title="基于hexo和github搭建个人博客" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" rel="tag">python-常用库</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-pdb" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/06/03/pdb/" class="article-date">
-  <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/03/pdb/">pdb</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import pdb</span><br></pre></td></tr></table></figure>
-
-<h2 id="设置断点"><a href="#设置断点" class="headerlink" title="设置断点"></a>设置断点</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pdb.set_trace()</span><br></pre></td></tr></table></figure>
-
-<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p><code>c</code>：执行到下一个断点</p>
-<p><code>p &lt;val&gt;</code>：打印变量 <code>&lt;val&gt;</code> 的值</p>
-<p><code>n</code>：运行一行</p>
-<p><code>l</code>：列出当前运行处的代码</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/pdb/" data-id="clwz4h813000ddgvqhcylf04u" data-title="pdb" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" rel="tag">python-常用库</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB/" rel="tag">工具类</a></li></ul>
 
     </footer>
   </div>
@@ -618,7 +462,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/os/" data-id="clwz4h820000fdgvq5lgzg3ua" data-title="os" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/os/" data-id="clwz5a4250009igvq1tjm4986" data-title="os" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -632,9 +476,9 @@
 
 
   
-    <article id="post-pymysql" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-json" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/06/03/pymysql/" class="article-date">
+    <a href="/2024/06/03/json/" class="article-date">
   <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
 </a>
     
@@ -646,7 +490,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/03/pymysql/">pymysql</a>
+      <a class="p-name article-title" href="/2024/06/03/json/">json</a>
     </h1>
   
 
@@ -654,21 +498,178 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="连接到数据库"><a href="#连接到数据库" class="headerlink" title="连接到数据库"></a>连接到数据库</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">db=pymysql.connect(</span><br><span class="line">		<span class="comment"># 主机名</span></span><br><span class="line">        host=<span class="string">&#x27;localhost&#x27;</span>,</span><br><span class="line">		<span class="comment"># 端口</span></span><br><span class="line">        port=<span class="number">3306</span>,</span><br><span class="line">		<span class="comment"># 用户名</span></span><br><span class="line">        user=<span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">		<span class="comment"># 密码</span></span><br><span class="line">        password=<span class="string">&#x27;password&#x27;</span>,</span><br><span class="line">		<span class="comment"># 数据库</span></span><br><span class="line">        database=<span class="string">&#x27;eng_zn_dictionary&#x27;</span>,</span><br><span class="line">		<span class="comment"># 自动 commit</span></span><br><span class="line">        autocommit=<span class="literal">True</span>,</span><br><span class="line">    )</span><br><span class="line">cursor = db.cursor()</span><br></pre></td></tr></table></figure>
+        <h2 id="json介绍"><a href="#json介绍" class="headerlink" title="json介绍"></a>json介绍</h2><p>json是一种轻量级的数据交互格式。主要功能：在各个编程语言中流通的数据格式，负责不同编程语言中的数据传递和交互。本质上是一个有特殊格式的字符串。</p>
+<p>python的列表与字典和json数据格式非常像。</p>
+<p>json数据示例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot;Kangkang&quot;</span><span class="punctuation">,</span><span class="attr">&quot;age&quot;</span><span class="punctuation">:</span><span class="number">18</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cursor.execute(<span class="string">&quot;SELECT * FROM your_table&quot;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">[</span><span class="punctuation">&#123;</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot;Kangkang&quot;</span><span class="punctuation">,</span><span class="attr">&quot;age&quot;</span><span class="punctuation">:</span><span class="number">18</span><span class="punctuation">&#125;</span><span class="punctuation">,</span><span class="punctuation">&#123;</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot;Maria&quot;</span><span class="punctuation">,</span><span class="attr">&quot;age&quot;</span><span class="punctuation">:</span><span class="number">16</span><span class="punctuation">&#125;</span><span class="punctuation">,</span><span class="punctuation">&#123;</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot;Jane&quot;</span><span class="punctuation">,</span><span class="attr">&quot;age&quot;</span><span class="punctuation">:</span><span class="number">15</span><span class="punctuation">&#125;</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
 
-<p>如果不置 <code>autocommit=True</code>，每执行一句 <code>SQL</code> 语句后要执行一句 <code>db.commit()</code></p>
-<h2 id="获取结果"><a href="#获取结果" class="headerlink" title="获取结果"></a>获取结果</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">results = cursor.fetchall()</span><br></pre></td></tr></table></figure>
+<h2 id="json库的方法"><a href="#json库的方法" class="headerlink" title="json库的方法"></a>json库的方法</h2><ul>
+<li><p><code>dumps()</code> 把py数据转为json数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">l=[&#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;Kangkang&quot;</span>,<span class="string">&quot;age&quot;</span>:<span class="number">18</span>&#125;,&#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;Maria&quot;</span>,<span class="string">&quot;age&quot;</span>:<span class="number">16</span>&#125;,&#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;Jane&quot;</span>,<span class="string">&quot;age&quot;</span>:<span class="number">15</span>&#125;]</span><br><span class="line">json_str=json.dumps(l)</span><br><span class="line"><span class="built_in">print</span>(json_str)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(json_str))				</span><br></pre></td></tr></table></figure>
 
-<h2 id="回滚"><a href="#回滚" class="headerlink" title="回滚"></a>回滚</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 执行 SQL 语句</span></span><br><span class="line">    cursor.execute(sql)</span><br><span class="line">    <span class="comment"># 提交到数据库执行</span></span><br><span class="line">    conn.commit()</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="comment"># 发生错误时回滚</span></span><br><span class="line">    conn.rollback()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#123;<span class="string">&quot;name&quot;</span>: <span class="string">&quot;\u5eb7\u5eb7&quot;</span>, <span class="string">&quot;age&quot;</span>: <span class="number">18</span>&#125;, &#123;<span class="string">&quot;name&quot;</span>: <span class="string">&quot;Maria&quot;</span>, <span class="string">&quot;age&quot;</span>: <span class="number">16</span>&#125;, &#123;<span class="string">&quot;name&quot;</span>: <span class="string">&quot;Jane&quot;</span>, <span class="string">&quot;age&quot;</span>: <span class="number">15</span>&#125;]</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;str&#x27;</span>&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cursor.close()</span><br></pre></td></tr></table></figure>
+<p>为了使中文正常显示需要加参数 <code>ensure_ascii</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">json_str=json.dumps(l,ensure_ascii=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>loads()</code> 把json数据转为py数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">json_str=<span class="string">&#x27;[&#123;&quot;name&quot;:&quot;Kangkang&quot;,&quot;age&quot;:18&#125;,&#123;&quot;name&quot;:&quot;Maria&quot;,&quot;age&quot;:16&#125;,&#123;&quot;name&quot;:&quot;Jane&quot;,&quot;age&quot;:15&#125;]&#x27;</span></span><br><span class="line">l=json.loads(json_str)</span><br><span class="line"><span class="built_in">print</span>(l)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(l))</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Kangkang&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">18</span>&#125;, &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Maria&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">16</span>&#125;, &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Jane&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">15</span>&#125;]</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;list&#x27;</span>&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/pymysql/" data-id="clwz4h821000hdgvq2t7ndpx7" data-title="pymysql" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/json/" data-id="clwz5a425000cigvq0dmrg8y2" data-title="json" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" rel="tag">python-常用库</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-pathlib" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/06/03/pathlib/" class="article-date">
+  <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/06/03/pathlib/">pathlib</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Path"><a href="#Path" class="headerlink" title="Path"></a>Path</h2><p>类，表示路径。</p>
+<p><code>Path(output_folder).mkdir(parents=True, exist_ok=True)</code>，创建目录 <code>output_folder</code>。</p>
+<ul>
+<li><code>parents=True</code>: 如果父目录不存在，也要创建父目录。如果设置为<code>True</code>，它将递归地创建所有必要的父目录，以确保目标路径存在。这对于创建多层嵌套的目录非常有用。</li>
+<li><code>exist_ok=True</code>: 如果设置为<code>True</code>，即使目录已经存在，也不会引发异常。这是为了防止在目录已经存在的情况下引发错误。</li>
+<li></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/06/03/pathlib/" data-id="clwz5a426000eigvqg12h3o87" data-title="pathlib" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" rel="tag">python-常用库</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-pdb" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/06/03/pdb/" class="article-date">
+  <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/06/03/pdb/">pdb</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import pdb</span><br></pre></td></tr></table></figure>
+
+<h2 id="设置断点"><a href="#设置断点" class="headerlink" title="设置断点"></a>设置断点</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pdb.set_trace()</span><br></pre></td></tr></table></figure>
+
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p><code>c</code>：执行到下一个断点</p>
+<p><code>p &lt;val&gt;</code>：打印变量 <code>&lt;val&gt;</code> 的值</p>
+<p><code>n</code>：运行一行</p>
+<p><code>l</code>：列出当前运行处的代码</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/06/03/pdb/" data-id="clwz5a427000higvq4e9v40lg" data-title="pdb" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" rel="tag">python-常用库</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-random" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/06/03/random/" class="article-date">
+  <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/06/03/random/">random</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><code>seed()</code> 设置随机数种子，默认以系统时间作为种子。</li>
+<li><code>random()</code> 生成一个 <code>[0.0,1.0]</code> 之间的随机小数。</li>
+<li><code>randint(a,b)</code> 生成一个 <code>[a,b]</code> 之间的随机整数（注意是左闭右闭）。</li>
+<li><code>uniform(a,b)</code> 生成一个 <code>[a,b]</code> 之间的随机浮点数。</li>
+<li><code>choice(seq)</code> 从 <code>seq</code> 中随机取出一个元素。</li>
+<li><code>shuffle(seq)</code> 将 <code>seq</code> 打乱，就地打乱，无返回值。</li>
+<li><code>sample(data,n)</code>：从一个给定的序列data（如列表、元组等）中随机抽取n个不重复的元素，并以列表形式返回这些元素。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/06/03/random/" data-id="clwz5a427000jigvq6ctfgexe" data-title="random" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -700,7 +701,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" rel="tag">python-常用工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" rel="tag">python-常用库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB/" rel="tag">工具类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82%E5%AD%A6%E6%97%81%E6%94%B6/" rel="tag">杂学旁收</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" rel="tag">python-常用工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" rel="tag">python-常用库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB/" rel="tag">工具类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82%E5%AD%A6%E6%97%81%E6%94%B6/" rel="tag">杂学旁收</a></li></ul>
     </div>
   </div>
 
@@ -710,7 +711,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/python-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">python-常用工具</a> <a href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" style="font-size: 20px;">python-常用库</a> <a href="/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB/" style="font-size: 10px;">工具类</a> <a href="/tags/%E6%9D%82%E5%AD%A6%E6%97%81%E6%94%B6/" style="font-size: 10px;">杂学旁收</a>
+      <a href="/tags/python-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">python-常用工具</a> <a href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" style="font-size: 20px;">python-常用库</a> <a href="/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB/" style="font-size: 10px;">工具类</a> <a href="/tags/%E6%9D%82%E5%AD%A6%E6%97%81%E6%94%B6/" style="font-size: 10px;">杂学旁收</a>
     </div>
   </div>
 
@@ -736,19 +737,19 @@
           </li>
         
           <li>
-            <a href="/2024/06/03/build-a-blog/">基于hexo和github搭建个人博客</a>
-          </li>
-        
-          <li>
             <a href="/2024/06/03/argparse/">argparse</a>
           </li>
         
           <li>
-            <a href="/2024/06/03/json/">json</a>
+            <a href="/2024/06/03/functools/">partial</a>
           </li>
         
           <li>
-            <a href="/2024/06/03/functools/">partial</a>
+            <a href="/2024/06/03/copy/">copy</a>
+          </li>
+        
+          <li>
+            <a href="/2024/06/03/build-a-blog/">基于hexo和github搭建个人博客</a>
           </li>
         
       </ul>
@@ -764,7 +765,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2024 John Doe<br>
+      &copy; 2024 StuLiMing<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

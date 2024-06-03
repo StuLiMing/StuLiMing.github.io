@@ -4,17 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>Syu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+  <meta name="description" content="莫听穿林打叶声，何妨吟啸且徐行">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Syu">
 <meta property="og:url" content="http://example.com/page/2/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Syu">
+<meta property="og:description" content="莫听穿林打叶声，何妨吟啸且徐行">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="StuLiMing">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Syu" type="application/atom+xml">
   
   
     <link rel="shortcut icon" href="/favicon.png">
@@ -39,7 +41,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">Syu</a>
       </h1>
       
     </div>
@@ -69,9 +71,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-pynput" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-pymysql" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/06/03/pynput/" class="article-date">
+    <a href="/2024/06/03/pymysql/" class="article-date">
   <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
 </a>
     
@@ -83,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/03/pynput/">pynput</a>
+      <a class="p-name article-title" href="/2024/06/03/pymysql/">pymysql</a>
     </h1>
   
 
@@ -91,61 +93,21 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>pynput这个库，允许你控制、监听输入设备。例如监听鼠标、键盘的各种操作。</p>
+        <h2 id="连接到数据库"><a href="#连接到数据库" class="headerlink" title="连接到数据库"></a>连接到数据库</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">db=pymysql.connect(</span><br><span class="line">		<span class="comment"># 主机名</span></span><br><span class="line">        host=<span class="string">&#x27;localhost&#x27;</span>,</span><br><span class="line">		<span class="comment"># 端口</span></span><br><span class="line">        port=<span class="number">3306</span>,</span><br><span class="line">		<span class="comment"># 用户名</span></span><br><span class="line">        user=<span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">		<span class="comment"># 密码</span></span><br><span class="line">        password=<span class="string">&#x27;password&#x27;</span>,</span><br><span class="line">		<span class="comment"># 数据库</span></span><br><span class="line">        database=<span class="string">&#x27;eng_zn_dictionary&#x27;</span>,</span><br><span class="line">		<span class="comment"># 自动 commit</span></span><br><span class="line">        autocommit=<span class="literal">True</span>,</span><br><span class="line">    )</span><br><span class="line">cursor = db.cursor()</span><br></pre></td></tr></table></figure>
+
+<h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cursor.execute(<span class="string">&quot;SELECT * FROM your_table&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>如果不置 <code>autocommit=True</code>，每执行一句 <code>SQL</code> 语句后要执行一句 <code>db.commit()</code></p>
+<h2 id="获取结果"><a href="#获取结果" class="headerlink" title="获取结果"></a>获取结果</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">results = cursor.fetchall()</span><br></pre></td></tr></table></figure>
+
+<h2 id="回滚"><a href="#回滚" class="headerlink" title="回滚"></a>回滚</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 执行 SQL 语句</span></span><br><span class="line">    cursor.execute(sql)</span><br><span class="line">    <span class="comment"># 提交到数据库执行</span></span><br><span class="line">    conn.commit()</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="comment"># 发生错误时回滚</span></span><br><span class="line">    conn.rollback()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cursor.close()</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/pynput/" data-id="clwz4h822000kdgvq718m0lw9" data-title="pynput" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" rel="tag">python-常用库</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-random" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/06/03/random/" class="article-date">
-  <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/03/random/">random</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <ol>
-<li><code>seed()</code> 设置随机数种子，默认以系统时间作为种子。</li>
-<li><code>random()</code> 生成一个 <code>[0.0,1.0]</code> 之间的随机小数。</li>
-<li><code>randint(a,b)</code> 生成一个 <code>[a,b]</code> 之间的随机整数（注意是左闭右闭）。</li>
-<li><code>uniform(a,b)</code> 生成一个 <code>[a,b]</code> 之间的随机浮点数。</li>
-<li><code>choice(seq)</code> 从 <code>seq</code> 中随机取出一个元素。</li>
-<li><code>shuffle(seq)</code> 将 <code>seq</code> 打乱，就地打乱，无返回值。</li>
-<li><code>sample(data,n)</code>：从一个给定的序列data（如列表、元组等）中随机抽取n个不重复的元素，并以列表形式返回这些元素。</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/random/" data-id="clwz4h822000mdgvqdp7931xp" data-title="random" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/pymysql/" data-id="clwz5a428000migvq65dq0kon" data-title="pymysql" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -335,7 +297,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/re/" data-id="clwz4h823000pdgvq6hplajtk" data-title="re" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/re/" data-id="clwz5a428000oigvq1okz5k8s" data-title="re" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -380,7 +342,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/setuptools/" data-id="clwz4h823000rdgvq7rsx7og1" data-title="setuptools" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/setuptools/" data-id="clwz5a42c000uigvq9z5k5n40" data-title="setuptools" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -443,7 +405,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/socket/" data-id="clwz4h824000udgvqb4o7cw06" data-title="socket" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/socket/" data-id="clwz5a42c000vigvqat8j1zd1" data-title="socket" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -457,9 +419,9 @@
 
 
   
-    <article id="post-sys" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-pynput" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/06/03/sys/" class="article-date">
+    <a href="/2024/06/03/pynput/" class="article-date">
   <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
 </a>
     
@@ -471,7 +433,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/03/sys/">sys</a>
+      <a class="p-name article-title" href="/2024/06/03/pynput/">pynput</a>
     </h1>
   
 
@@ -479,11 +441,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="读入命令行参数"><a href="#读入命令行参数" class="headerlink" title="读入命令行参数"></a>读入命令行参数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取命令行参数</span></span><br><span class="line">script_name = sys.argv[<span class="number">0</span>]</span><br><span class="line">arguments = sys.argv[<span class="number">1</span>:]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印脚本名称和参数</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Script Name: <span class="subst">&#123;script_name&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Arguments: <span class="subst">&#123;arguments&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+        <p>pynput这个库，允许你控制、监听输入设备。例如监听鼠标、键盘的各种操作。</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/sys/" data-id="clwz4h824000wdgvqdv0m9p2a" data-title="sys" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/pynput/" data-id="clwz5a42d000xigvqbgv20m2m" data-title="pynput" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -531,11 +494,99 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/threading/" data-id="clwz4h825000ydgvqbd09dk23" data-title="threading" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/threading/" data-id="clwz5a42d000zigvqd8g11936" data-title="threading" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" rel="tag">python-常用库</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-sys" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/06/03/sys/" class="article-date">
+  <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/06/03/sys/">sys</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="读入命令行参数"><a href="#读入命令行参数" class="headerlink" title="读入命令行参数"></a>读入命令行参数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取命令行参数</span></span><br><span class="line">script_name = sys.argv[<span class="number">0</span>]</span><br><span class="line">arguments = sys.argv[<span class="number">1</span>:]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印脚本名称和参数</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Script Name: <span class="subst">&#123;script_name&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Arguments: <span class="subst">&#123;arguments&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/06/03/sys/" data-id="clwz5a42e0011igvq85f9defn" data-title="sys" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" rel="tag">python-常用库</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-工具类" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/06/03/%E5%B7%A5%E5%85%B7%E7%B1%BB/" class="article-date">
+  <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/06/03/%E5%B7%A5%E5%85%B7%E7%B1%BB/">pipreqs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="pipreqs"><a href="#pipreqs" class="headerlink" title="pipreqs"></a>pipreqs</h1><p>用于一键生成 <code>requirements.txt</code> 文件。</p>
+<p><strong>安装</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pipreqs</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipreqs ./ --encoding=utf8 --force</span><br></pre></td></tr></table></figure>
+
+<p>这里的 <code>--force</code> 意思是覆盖原有的 <code>requirements.txt</code> 文件。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/06/03/%E5%B7%A5%E5%85%B7%E7%B1%BB/" data-id="clwz5a42e0013igvq9sdfc1w2" data-title="pipreqs" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" rel="tag">python-常用工具</a></li></ul>
 
     </footer>
   </div>
@@ -689,59 +740,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/time/" data-id="clwz4h8250010dgvq7mgfh9b5" data-title="time" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/time/" data-id="clwz5a42e0015igvq4ono70as" data-title="time" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" rel="tag">python-常用库</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-工具类" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/06/03/%E5%B7%A5%E5%85%B7%E7%B1%BB/" class="article-date">
-  <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/03/%E5%B7%A5%E5%85%B7%E7%B1%BB/">pipreqs</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="pipreqs"><a href="#pipreqs" class="headerlink" title="pipreqs"></a>pipreqs</h1><p>用于一键生成 <code>requirements.txt</code> 文件。</p>
-<p><strong>安装</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pipreqs</span><br></pre></td></tr></table></figure>
-
-<p><strong>使用</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipreqs ./ --encoding=utf8 --force</span><br></pre></td></tr></table></figure>
-
-<p>这里的 <code>--force</code> 意思是覆盖原有的 <code>requirements.txt</code> 文件。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/%E5%B7%A5%E5%85%B7%E7%B1%BB/" data-id="clwz4h82a0018dgvq5dia7u9v" data-title="pipreqs" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" rel="tag">python-常用工具</a></li></ul>
 
     </footer>
   </div>
@@ -790,7 +793,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/hello-world/" data-id="clwz4h8100005dgvqbpugft76" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/hello-world/" data-id="clwz5a4220005igvqhspng5tz" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -820,7 +823,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" rel="tag">python-常用工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" rel="tag">python-常用库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB/" rel="tag">工具类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82%E5%AD%A6%E6%97%81%E6%94%B6/" rel="tag">杂学旁收</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" rel="tag">python-常用工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" rel="tag">python-常用库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB/" rel="tag">工具类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82%E5%AD%A6%E6%97%81%E6%94%B6/" rel="tag">杂学旁收</a></li></ul>
     </div>
   </div>
 
@@ -830,7 +833,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/python-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">python-常用工具</a> <a href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" style="font-size: 20px;">python-常用库</a> <a href="/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB/" style="font-size: 10px;">工具类</a> <a href="/tags/%E6%9D%82%E5%AD%A6%E6%97%81%E6%94%B6/" style="font-size: 10px;">杂学旁收</a>
+      <a href="/tags/python-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">python-常用工具</a> <a href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" style="font-size: 20px;">python-常用库</a> <a href="/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB/" style="font-size: 10px;">工具类</a> <a href="/tags/%E6%9D%82%E5%AD%A6%E6%97%81%E6%94%B6/" style="font-size: 10px;">杂学旁收</a>
     </div>
   </div>
 
@@ -856,19 +859,19 @@
           </li>
         
           <li>
-            <a href="/2024/06/03/build-a-blog/">基于hexo和github搭建个人博客</a>
-          </li>
-        
-          <li>
             <a href="/2024/06/03/argparse/">argparse</a>
           </li>
         
           <li>
-            <a href="/2024/06/03/json/">json</a>
+            <a href="/2024/06/03/functools/">partial</a>
           </li>
         
           <li>
-            <a href="/2024/06/03/functools/">partial</a>
+            <a href="/2024/06/03/copy/">copy</a>
+          </li>
+        
+          <li>
+            <a href="/2024/06/03/build-a-blog/">基于hexo和github搭建个人博客</a>
           </li>
         
       </ul>
@@ -884,7 +887,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2024 John Doe<br>
+      &copy; 2024 StuLiMing<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
