@@ -71,9 +71,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-pymysql" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-pynput" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/06/03/pymysql/" class="article-date">
+    <a href="/2024/06/03/pynput/" class="article-date">
   <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
 </a>
     
@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/03/pymysql/">pymysql</a>
+      <a class="p-name article-title" href="/2024/06/03/pynput/">pynput</a>
     </h1>
   
 
@@ -93,21 +93,61 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="连接到数据库"><a href="#连接到数据库" class="headerlink" title="连接到数据库"></a>连接到数据库</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">db=pymysql.connect(</span><br><span class="line">		<span class="comment"># 主机名</span></span><br><span class="line">        host=<span class="string">&#x27;localhost&#x27;</span>,</span><br><span class="line">		<span class="comment"># 端口</span></span><br><span class="line">        port=<span class="number">3306</span>,</span><br><span class="line">		<span class="comment"># 用户名</span></span><br><span class="line">        user=<span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">		<span class="comment"># 密码</span></span><br><span class="line">        password=<span class="string">&#x27;password&#x27;</span>,</span><br><span class="line">		<span class="comment"># 数据库</span></span><br><span class="line">        database=<span class="string">&#x27;eng_zn_dictionary&#x27;</span>,</span><br><span class="line">		<span class="comment"># 自动 commit</span></span><br><span class="line">        autocommit=<span class="literal">True</span>,</span><br><span class="line">    )</span><br><span class="line">cursor = db.cursor()</span><br></pre></td></tr></table></figure>
-
-<h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cursor.execute(<span class="string">&quot;SELECT * FROM your_table&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>如果不置 <code>autocommit=True</code>，每执行一句 <code>SQL</code> 语句后要执行一句 <code>db.commit()</code></p>
-<h2 id="获取结果"><a href="#获取结果" class="headerlink" title="获取结果"></a>获取结果</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">results = cursor.fetchall()</span><br></pre></td></tr></table></figure>
-
-<h2 id="回滚"><a href="#回滚" class="headerlink" title="回滚"></a>回滚</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 执行 SQL 语句</span></span><br><span class="line">    cursor.execute(sql)</span><br><span class="line">    <span class="comment"># 提交到数据库执行</span></span><br><span class="line">    conn.commit()</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="comment"># 发生错误时回滚</span></span><br><span class="line">    conn.rollback()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cursor.close()</span><br></pre></td></tr></table></figure>
+        <p>pynput这个库，允许你控制、监听输入设备。例如监听鼠标、键盘的各种操作。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/pymysql/" data-id="clwz5a428000migvq65dq0kon" data-title="pymysql" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/pynput/" data-id="clwz67x78000m3kvq0r7o8tr8" data-title="pynput" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" rel="tag">python-常用库</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-random" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/06/03/random/" class="article-date">
+  <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/06/03/random/">random</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><code>seed()</code> 设置随机数种子，默认以系统时间作为种子。</li>
+<li><code>random()</code> 生成一个 <code>[0.0,1.0]</code> 之间的随机小数。</li>
+<li><code>randint(a,b)</code> 生成一个 <code>[a,b]</code> 之间的随机整数（注意是左闭右闭）。</li>
+<li><code>uniform(a,b)</code> 生成一个 <code>[a,b]</code> 之间的随机浮点数。</li>
+<li><code>choice(seq)</code> 从 <code>seq</code> 中随机取出一个元素。</li>
+<li><code>shuffle(seq)</code> 将 <code>seq</code> 打乱，就地打乱，无返回值。</li>
+<li><code>sample(data,n)</code>：从一个给定的序列data（如列表、元组等）中随机抽取n个不重复的元素，并以列表形式返回这些元素。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/06/03/random/" data-id="clwz67x78000o3kvq9hfv8gqv" data-title="random" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -297,7 +337,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/re/" data-id="clwz5a428000oigvq1okz5k8s" data-title="re" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/re/" data-id="clwz67x7d000t3kvq9a9l21nj" data-title="re" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -342,7 +382,47 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/setuptools/" data-id="clwz5a42c000uigvq9z5k5n40" data-title="setuptools" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/setuptools/" data-id="clwz67x7d000u3kvq74hj2zx6" data-title="setuptools" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" rel="tag">python-常用库</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-sys" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/06/03/sys/" class="article-date">
+  <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/06/03/sys/">sys</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="读入命令行参数"><a href="#读入命令行参数" class="headerlink" title="读入命令行参数"></a>读入命令行参数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取命令行参数</span></span><br><span class="line">script_name = sys.argv[<span class="number">0</span>]</span><br><span class="line">arguments = sys.argv[<span class="number">1</span>:]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印脚本名称和参数</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Script Name: <span class="subst">&#123;script_name&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Arguments: <span class="subst">&#123;arguments&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/06/03/sys/" data-id="clwz67x7d000w3kvq5qx0acbv" data-title="sys" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -405,188 +485,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/socket/" data-id="clwz5a42c000vigvqat8j1zd1" data-title="socket" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/socket/" data-id="clwz67x7e000y3kvqc3hn8hdk" data-title="socket" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" rel="tag">python-常用库</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-pynput" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/06/03/pynput/" class="article-date">
-  <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/03/pynput/">pynput</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>pynput这个库，允许你控制、监听输入设备。例如监听鼠标、键盘的各种操作。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/pynput/" data-id="clwz5a42d000xigvqbgv20m2m" data-title="pynput" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" rel="tag">python-常用库</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-threading" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/06/03/threading/" class="article-date">
-  <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/03/threading/">threading</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h2><p>创建两个线程，分别执行函数 <code>eyekeyboard</code> 和 <code>terminal</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 监视键盘</span></span><br><span class="line">keyboard_thread = threading.Thread(target=eyekeyboard,daemon=<span class="literal">True</span>)</span><br><span class="line">keyboard_thread.start()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 终端</span></span><br><span class="line">terminal_thread = threading.Thread(target=terminal)</span><br><span class="line">terminal_thread.start()</span><br></pre></td></tr></table></figure>
-
-<p>这里参数 <code>daemon=True</code> 意思是将这个线程设置为<strong>守护线程</strong>。守护线程会在主线程结束时自动结束。</p>
-<h2 id="线程间通信"><a href="#线程间通信" class="headerlink" title="线程间通信"></a>线程间通信</h2><p>使用 <code>queue</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> queue</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">Q=queue.Queue()</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">th1_fun</span>():</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line">        Q.put(&#123;<span class="string">&quot;apple&quot;</span>:<span class="number">1</span>,<span class="string">&quot;banana&quot;</span>:<span class="number">2</span>&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">th2_fun</span>():</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line">        (apple,banana)=Q.get().values()</span><br><span class="line">        <span class="built_in">print</span>(apple,banana)</span><br><span class="line">th1=threading.Thread(target=th1_fun)</span><br><span class="line">th1.start()</span><br><span class="line"></span><br><span class="line">th2=threading.Thread(target=th2_fun)</span><br><span class="line">th2.start()</span><br></pre></td></tr></table></figure>
-
-<p>一个线程<code>put</code>，另一个线程<code>get</code>。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/threading/" data-id="clwz5a42d000zigvqd8g11936" data-title="threading" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" rel="tag">python-常用库</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-sys" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/06/03/sys/" class="article-date">
-  <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/03/sys/">sys</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="读入命令行参数"><a href="#读入命令行参数" class="headerlink" title="读入命令行参数"></a>读入命令行参数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取命令行参数</span></span><br><span class="line">script_name = sys.argv[<span class="number">0</span>]</span><br><span class="line">arguments = sys.argv[<span class="number">1</span>:]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印脚本名称和参数</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Script Name: <span class="subst">&#123;script_name&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Arguments: <span class="subst">&#123;arguments&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/sys/" data-id="clwz5a42e0011igvq85f9defn" data-title="sys" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" rel="tag">python-常用库</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-工具类" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/06/03/%E5%B7%A5%E5%85%B7%E7%B1%BB/" class="article-date">
-  <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/03/%E5%B7%A5%E5%85%B7%E7%B1%BB/">pipreqs</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="pipreqs"><a href="#pipreqs" class="headerlink" title="pipreqs"></a>pipreqs</h1><p>用于一键生成 <code>requirements.txt</code> 文件。</p>
-<p><strong>安装</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pipreqs</span><br></pre></td></tr></table></figure>
-
-<p><strong>使用</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipreqs ./ --encoding=utf8 --force</span><br></pre></td></tr></table></figure>
-
-<p>这里的 <code>--force</code> 意思是覆盖原有的 <code>requirements.txt</code> 文件。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/%E5%B7%A5%E5%85%B7%E7%B1%BB/" data-id="clwz5a42e0013igvq9sdfc1w2" data-title="pipreqs" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" rel="tag">python-常用工具</a></li></ul>
 
     </footer>
   </div>
@@ -740,11 +643,107 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/time/" data-id="clwz5a42e0015igvq4ono70as" data-title="time" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/time/" data-id="clwz67x7e00103kvq8c4s0dwi" data-title="time" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" rel="tag">python-常用库</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-threading" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/06/03/threading/" class="article-date">
+  <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/06/03/threading/">threading</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h2><p>创建两个线程，分别执行函数 <code>eyekeyboard</code> 和 <code>terminal</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 监视键盘</span></span><br><span class="line">keyboard_thread = threading.Thread(target=eyekeyboard,daemon=<span class="literal">True</span>)</span><br><span class="line">keyboard_thread.start()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 终端</span></span><br><span class="line">terminal_thread = threading.Thread(target=terminal)</span><br><span class="line">terminal_thread.start()</span><br></pre></td></tr></table></figure>
+
+<p>这里参数 <code>daemon=True</code> 意思是将这个线程设置为<strong>守护线程</strong>。守护线程会在主线程结束时自动结束。</p>
+<h2 id="线程间通信"><a href="#线程间通信" class="headerlink" title="线程间通信"></a>线程间通信</h2><p>使用 <code>queue</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> queue</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">Q=queue.Queue()</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">th1_fun</span>():</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line">        Q.put(&#123;<span class="string">&quot;apple&quot;</span>:<span class="number">1</span>,<span class="string">&quot;banana&quot;</span>:<span class="number">2</span>&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">th2_fun</span>():</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line">        (apple,banana)=Q.get().values()</span><br><span class="line">        <span class="built_in">print</span>(apple,banana)</span><br><span class="line">th1=threading.Thread(target=th1_fun)</span><br><span class="line">th1.start()</span><br><span class="line"></span><br><span class="line">th2=threading.Thread(target=th2_fun)</span><br><span class="line">th2.start()</span><br></pre></td></tr></table></figure>
+
+<p>一个线程<code>put</code>，另一个线程<code>get</code>。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/06/03/threading/" data-id="clwz67x7e00123kvq1lng7n9e" data-title="threading" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%BA%93/" rel="tag">python-常用库</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-工具类" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/06/03/%E5%B7%A5%E5%85%B7%E7%B1%BB/" class="article-date">
+  <time class="dt-published" datetime="2024-06-03T13:04:58.000Z" itemprop="datePublished">2024-06-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/06/03/%E5%B7%A5%E5%85%B7%E7%B1%BB/">pipreqs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="pipreqs"><a href="#pipreqs" class="headerlink" title="pipreqs"></a>pipreqs</h1><p>用于一键生成 <code>requirements.txt</code> 文件。</p>
+<p><strong>安装</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pipreqs</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipreqs ./ --encoding=utf8 --force</span><br></pre></td></tr></table></figure>
+
+<p>这里的 <code>--force</code> 意思是覆盖原有的 <code>requirements.txt</code> 文件。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/06/03/%E5%B7%A5%E5%85%B7%E7%B1%BB/" data-id="clwz67x7f00143kvq5koodbl0" data-title="pipreqs" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" rel="tag">python-常用工具</a></li></ul>
 
     </footer>
   </div>
@@ -793,7 +792,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/hello-world/" data-id="clwz5a4220005igvqhspng5tz" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/06/03/hello-world/" data-id="clwz67x7000043kvq3yfchxg6" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -863,7 +862,7 @@
           </li>
         
           <li>
-            <a href="/2024/06/03/functools/">partial</a>
+            <a href="/2024/06/03/build-a-blog/">基于hexo和github搭建个人博客</a>
           </li>
         
           <li>
@@ -871,7 +870,7 @@
           </li>
         
           <li>
-            <a href="/2024/06/03/build-a-blog/">基于hexo和github搭建个人博客</a>
+            <a href="/2024/06/03/json/">json</a>
           </li>
         
       </ul>
