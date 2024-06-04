@@ -217,12 +217,12 @@
 </tr>
 </tbody></table>
 <h2 id="os-walk"><a href="#os-walk" class="headerlink" title="os.walk()"></a>os.walk()</h2><p>假如目录结构如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">--a</span><br><span class="line">  --b</span><br><span class="line">	test.py</span><br><span class="line">  --c</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">--a<br>  --b<br>	test.py<br>  --c<br></code></pre></td></tr></table></figure>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> root,dirs,files <span class="keyword">in</span> os.walk(<span class="string">&quot;./&quot;</span>):</span><br><span class="line">    <span class="built_in">print</span>(root,dirs,files)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><br><span class="hljs-keyword">for</span> root,dirs,files <span class="hljs-keyword">in</span> os.walk(<span class="hljs-string">&quot;./&quot;</span>):<br>    <span class="hljs-built_in">print</span>(root,dirs,files)<br><br></code></pre></td></tr></table></figure>
 
 <p>输出：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./ [&#x27;b&#x27;, &#x27;c&#x27;] []</span><br><span class="line">./b [] [&#x27;test.py&#x27;]</span><br><span class="line">./c [] []</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">./ [&#x27;b&#x27;, &#x27;c&#x27;] []<br>./b [] [&#x27;test.py&#x27;]<br>./c [] []<br></code></pre></td></tr></table></figure>
 
 <p>也就是说，<code>os.walk</code> 会遍历当前目录下的所有目录（包括当前目录），每次取出一个目录赋值给 <code>root</code>，将这个目录下的目录作为一个列表赋值给 <code>dirs</code>，将这个目录下的文件作为一个列表赋值给 <code>files</code>。</p>
 <h2 id="path下的方法"><a href="#path下的方法" class="headerlink" title="path下的方法"></a>path下的方法</h2><ul>
@@ -290,7 +290,7 @@
   
   <div class="vhr"></div>
   
-    <a class="post-nav-item-right" href="/2024/06/03/pathlib/">
+    <a class="post-nav-item-right" href="/2024/06/03/pipreqs/">
       <div class="text-align">
         <span class="text-small">下一篇</span>
         <svg t="1670570876164"
@@ -302,7 +302,7 @@
           <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596" />
         </svg>
       </div>
-      pathlib
+      pipreqs
     </a>
   
 </div>

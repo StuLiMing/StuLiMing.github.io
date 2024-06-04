@@ -167,10 +167,10 @@
           </div>
         
         <h2 id="re模块三种主要的正则表达式匹配方法"><a href="#re模块三种主要的正则表达式匹配方法" class="headerlink" title="re模块三种主要的正则表达式匹配方法"></a>re模块三种主要的正则表达式匹配方法</h2><h3 id="match"><a href="#match" class="headerlink" title="match()"></a>match()</h3><p><code>match(pattern, string)</code> 会在 string 中匹配正则表达式 pattern ，这个方法从头开始匹配，且只匹配第一个命中项。没有匹配到时返回 <code>None</code> 。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">s1=<span class="string">&quot;000python111pythonpython222&quot;</span></span><br><span class="line">s2=<span class="string">&quot;python111pythonpython222&quot;</span></span><br><span class="line">result1=re.<span class="keyword">match</span>(<span class="string">&#x27;python&#x27;</span>,s1)</span><br><span class="line">result2=re.<span class="keyword">match</span>(<span class="string">&#x27;python&#x27;</span>,s2)</span><br><span class="line"><span class="built_in">print</span>(result1)</span><br><span class="line"><span class="built_in">print</span>(result2)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> re<br>s1=<span class="hljs-string">&quot;000python111pythonpython222&quot;</span><br>s2=<span class="hljs-string">&quot;python111pythonpython222&quot;</span><br>result1=re.<span class="hljs-keyword">match</span>(<span class="hljs-string">&#x27;python&#x27;</span>,s1)<br>result2=re.<span class="hljs-keyword">match</span>(<span class="hljs-string">&#x27;python&#x27;</span>,s2)<br><span class="hljs-built_in">print</span>(result1)<br><span class="hljs-built_in">print</span>(result2)<br></code></pre></td></tr></table></figure>
 
 <p>输出：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">None</span></span><br><span class="line">&lt;re.Match <span class="built_in">object</span>; span=(<span class="number">0</span>, <span class="number">6</span>), <span class="keyword">match</span>=<span class="string">&#x27;python&#x27;</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-literal">None</span><br>&lt;re.Match <span class="hljs-built_in">object</span>; span=(<span class="hljs-number">0</span>, <span class="hljs-number">6</span>), <span class="hljs-keyword">match</span>=<span class="hljs-string">&#x27;python&#x27;</span>&gt;<br></code></pre></td></tr></table></figure>
 
 <p>通过 <code>result.group()</code> 和 <code>result.span()</code> 可以分别查看匹配到的字符串内容及其起止位置（这个起止位置是左闭右开的）</p>
 <h3 id="group-方法的使用"><a href="#group-方法的使用" class="headerlink" title="group 方法的使用"></a><code>group</code> 方法的使用</h3><ul>
@@ -180,7 +180,7 @@
 </ul>
 <h3 id="search"><a href="#search" class="headerlink" title="search"></a>search</h3><p><code>search(pattern, string)</code> 与<code>match(pattern, string)</code> 类似，但是是全局匹配而非从头匹配。它也只匹配第一个命中项。</p>
 <h3 id="findall"><a href="#findall" class="headerlink" title="findall"></a>findall</h3><p><code>findall(pattern,string)</code> 会进行全局匹配且匹配所有命中项，返回的是一个匹配到的字符串的列表，没有匹配到内容的时候返回空列表。</p>
-<h2 id="替换匹配的文本"><a href="#替换匹配的文本" class="headerlink" title="替换匹配的文本"></a>替换匹配的文本</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">square</span>(<span class="params"><span class="keyword">match</span></span>):</span><br><span class="line">    num = <span class="built_in">int</span>(<span class="keyword">match</span>.group())</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">str</span>(num * num)</span><br><span class="line"></span><br><span class="line">text = <span class="string">&quot;这是一个示例文本，其中包含1234一些数字5678。&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用正则表达式匹配文本中的所有数字</span></span><br><span class="line">pattern = <span class="string">r&#x27;\d+&#x27;</span></span><br><span class="line">result = re.sub(pattern, square, text)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="替换匹配的文本"><a href="#替换匹配的文本" class="headerlink" title="替换匹配的文本"></a>替换匹配的文本</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> re<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">square</span>(<span class="hljs-params"><span class="hljs-keyword">match</span></span>):<br>    num = <span class="hljs-built_in">int</span>(<span class="hljs-keyword">match</span>.group())<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">str</span>(num * num)<br><br>text = <span class="hljs-string">&quot;这是一个示例文本，其中包含1234一些数字5678。&quot;</span><br><br><span class="hljs-comment"># 使用正则表达式匹配文本中的所有数字</span><br>pattern = <span class="hljs-string">r&#x27;\d+&#x27;</span><br>result = re.sub(pattern, square, text)<br><br><span class="hljs-built_in">print</span>(result)<br><br></code></pre></td></tr></table></figure>
 
 <h2 id="字符串匹配规则"><a href="#字符串匹配规则" class="headerlink" title="字符串匹配规则"></a>字符串匹配规则</h2><table>
 <thead>
@@ -359,7 +359,7 @@
     
     <div class="post-nav">
   
-    <a class="post-nav-item-left" href="/2024/06/03/random/">
+    <a class="post-nav-item-left" href="/2024/06/03/socket/">
       <div class="text-align">
         <svg t="1670570876164"
              class="icon"
@@ -370,12 +370,12 @@
         </svg>
         <span class="text-small">上一篇</span>
       </div>
-      <div>random</div>
+      <div>socket</div>
     </a>
   
   <div class="vhr"></div>
   
-    <a class="post-nav-item-right" href="/2024/06/03/setuptools/">
+    <a class="post-nav-item-right" href="/2024/06/03/sys/">
       <div class="text-align">
         <span class="text-small">下一篇</span>
         <svg t="1670570876164"
@@ -387,7 +387,7 @@
           <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596" />
         </svg>
       </div>
-      setuptools
+      sys
     </a>
   
 </div>

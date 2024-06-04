@@ -178,13 +178,13 @@
 </li>
 <li><p><code>ctime()</code></p>
 <p>获取当前时间并以易读的方式表示（字符串）。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(ctime())			<span class="comment"># Sat Aug 19 17:21:13 2023</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(ctime())			<span class="hljs-comment"># Sat Aug 19 17:21:13 2023</span><br></code></pre></td></tr></table></figure>
 
 <p><code>ctime(secs)</code> 会把时间戳secs转为易读的字符串。</p>
 </li>
 <li><p><code>gmtime()</code></p>
 <p>获取当前时间并以计算机易处理的格外返回（struct_time）。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(gmtime())			</span><br><span class="line"><span class="comment"># time.struct_time(tm_year=2023, tm_mon=8, tm_mday=19, tm_hour=9, tm_min=25, tm_sec=13, tm_wday=5, tm_yday=231, tm_isdst=0)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(gmtime())			<br><span class="hljs-comment"># time.struct_time(tm_year=2023, tm_mon=8, tm_mday=19, tm_hour=9, tm_min=25, tm_sec=13, tm_wday=5, tm_yday=231, tm_isdst=0)</span><br></code></pre></td></tr></table></figure>
 
 <ul>
 <li><p>这里调用这个语句的时候是17：25 ，tm_hour不是17而是9因为返回的是UTC，我所在的地方是东八区，要加8。</p>
@@ -202,11 +202,11 @@
 </li>
 <li><p><code>strptime(string,format)</code></p>
 <p>将string按format的规则解析，返回一个 struct_time</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">timeStr= <span class="string">&#x27;2023-8-19 17:37:44&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(strptime(timeStr, <span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>))</span><br><span class="line"><span class="comment"># time.struct_time(tm_year=2023, tm_mon=8, tm_mday=19, tm_hour=17, tm_min=37, tm_sec=44, tm_wday=5, tm_yday=231, tm_isdst=-1)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">timeStr= <span class="hljs-string">&#x27;2023-8-19 17:37:44&#x27;</span><br><span class="hljs-built_in">print</span>(strptime(timeStr, <span class="hljs-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>))<br><span class="hljs-comment"># time.struct_time(tm_year=2023, tm_mon=8, tm_mday=19, tm_hour=17, tm_min=37, tm_sec=44, tm_wday=5, tm_yday=231, tm_isdst=-1)</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p><code>strftime(format,t)</code></p>
 <p>将 struct_time 类型的 t 按format解析，返回一个字符串。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>,gmtime()))</span><br><span class="line"><span class="comment"># 2023-08-19 09:39:42</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(strftime(<span class="hljs-string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>,gmtime()))<br><span class="hljs-comment"># 2023-08-19 09:39:42</span><br></code></pre></td></tr></table></figure>
 
 <p>格式化表示时间的字符串用到的占位符：</p>
 <table>

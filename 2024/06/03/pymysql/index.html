@@ -166,16 +166,16 @@
             
           </div>
         
-        <h2 id="连接到数据库"><a href="#连接到数据库" class="headerlink" title="连接到数据库"></a>连接到数据库</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">db=pymysql.connect(</span><br><span class="line">		<span class="comment"># 主机名</span></span><br><span class="line">        host=<span class="string">&#x27;localhost&#x27;</span>,</span><br><span class="line">		<span class="comment"># 端口</span></span><br><span class="line">        port=<span class="number">3306</span>,</span><br><span class="line">		<span class="comment"># 用户名</span></span><br><span class="line">        user=<span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">		<span class="comment"># 密码</span></span><br><span class="line">        password=<span class="string">&#x27;password&#x27;</span>,</span><br><span class="line">		<span class="comment"># 数据库</span></span><br><span class="line">        database=<span class="string">&#x27;eng_zn_dictionary&#x27;</span>,</span><br><span class="line">		<span class="comment"># 自动 commit</span></span><br><span class="line">        autocommit=<span class="literal">True</span>,</span><br><span class="line">    )</span><br><span class="line">cursor = db.cursor()</span><br></pre></td></tr></table></figure>
+        <h2 id="连接到数据库"><a href="#连接到数据库" class="headerlink" title="连接到数据库"></a>连接到数据库</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python">db=pymysql.connect(<br>		<span class="hljs-comment"># 主机名</span><br>        host=<span class="hljs-string">&#x27;localhost&#x27;</span>,<br>		<span class="hljs-comment"># 端口</span><br>        port=<span class="hljs-number">3306</span>,<br>		<span class="hljs-comment"># 用户名</span><br>        user=<span class="hljs-string">&#x27;root&#x27;</span>,<br>		<span class="hljs-comment"># 密码</span><br>        password=<span class="hljs-string">&#x27;password&#x27;</span>,<br>		<span class="hljs-comment"># 数据库</span><br>        database=<span class="hljs-string">&#x27;eng_zn_dictionary&#x27;</span>,<br>		<span class="hljs-comment"># 自动 commit</span><br>        autocommit=<span class="hljs-literal">True</span>,<br>    )<br>cursor = db.cursor()<br></code></pre></td></tr></table></figure>
 
-<h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cursor.execute(<span class="string">&quot;SELECT * FROM your_table&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">cursor.execute(<span class="hljs-string">&quot;SELECT * FROM your_table&quot;</span>)<br></code></pre></td></tr></table></figure>
 
 <p>如果不置 <code>autocommit=True</code>，每执行一句 <code>SQL</code> 语句后要执行一句 <code>db.commit()</code></p>
-<h2 id="获取结果"><a href="#获取结果" class="headerlink" title="获取结果"></a>获取结果</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">results = cursor.fetchall()</span><br></pre></td></tr></table></figure>
+<h2 id="获取结果"><a href="#获取结果" class="headerlink" title="获取结果"></a>获取结果</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">results = cursor.fetchall()<br></code></pre></td></tr></table></figure>
 
-<h2 id="回滚"><a href="#回滚" class="headerlink" title="回滚"></a>回滚</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 执行 SQL 语句</span></span><br><span class="line">    cursor.execute(sql)</span><br><span class="line">    <span class="comment"># 提交到数据库执行</span></span><br><span class="line">    conn.commit()</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="comment"># 发生错误时回滚</span></span><br><span class="line">    conn.rollback()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="回滚"><a href="#回滚" class="headerlink" title="回滚"></a>回滚</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">try</span>:<br>    <span class="hljs-comment"># 执行 SQL 语句</span><br>    cursor.execute(sql)<br>    <span class="hljs-comment"># 提交到数据库执行</span><br>    conn.commit()<br><span class="hljs-keyword">except</span>:<br>    <span class="hljs-comment"># 发生错误时回滚</span><br>    conn.rollback()<br><br></code></pre></td></tr></table></figure>
 
-<h2 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cursor.close()</span><br></pre></td></tr></table></figure>
+<h2 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">cursor.close()<br></code></pre></td></tr></table></figure>
 
       </div>
     </div>
@@ -219,7 +219,7 @@
     
     <div class="post-nav">
   
-    <a class="post-nav-item-left" href="/2024/06/03/pynput/">
+    <a class="post-nav-item-left" href="/2024/06/03/pdb/">
       <div class="text-align">
         <svg t="1670570876164"
              class="icon"
@@ -230,12 +230,12 @@
         </svg>
         <span class="text-small">上一篇</span>
       </div>
-      <div>pynput</div>
+      <div>pdb</div>
     </a>
   
   <div class="vhr"></div>
   
-    <a class="post-nav-item-right" href="/2024/06/03/random/">
+    <a class="post-nav-item-right" href="/2024/06/03/pynput/">
       <div class="text-align">
         <span class="text-small">下一篇</span>
         <svg t="1670570876164"
@@ -247,7 +247,7 @@
           <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596" />
         </svg>
       </div>
-      random
+      pynput
     </a>
   
 </div>

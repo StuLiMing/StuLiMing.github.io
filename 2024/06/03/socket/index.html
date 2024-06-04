@@ -170,24 +170,24 @@
 <li>假设已经 <code>import socket</code> 。</li>
 <li>addr 的格式是 <code>(ip,port)</code> 或 <code>(hostname,port)</code> ，它是一个元组。</li>
 </ul>
-<h1 id="创建socket"><a href="#创建socket" class="headerlink" title="创建socket"></a>创建socket</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sk=socket(family,<span class="built_in">type</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="创建socket"><a href="#创建socket" class="headerlink" title="创建socket"></a>创建socket</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">sk=socket(family,<span class="hljs-built_in">type</span>)<br></code></pre></td></tr></table></figure>
 <p>family 取值：AF_INET(IPv4)、DF_INET6(IPv6)<br>type 取值：SOCK_STREAM（TCP协议）、SOCK_DGRAM（UDP协议）</p>
-<h1 id="connect"><a href="#connect" class="headerlink" title="connect"></a>connect</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sk.connect(addr)</span><br></pre></td></tr></table></figure>
+<h1 id="connect"><a href="#connect" class="headerlink" title="connect"></a>connect</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">sk.connect(addr)<br></code></pre></td></tr></table></figure>
 <p>连接到一个远程的 socket。</p>
-<h1 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sk.bind(addr)</span><br></pre></td></tr></table></figure>
+<h1 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">sk.bind(addr)<br></code></pre></td></tr></table></figure>
 <p>将 sk 绑定到一个地址。</p>
 <h1 id="listen-backlog"><a href="#listen-backlog" class="headerlink" title="listen(backlog)"></a>listen(backlog)</h1><p>监听，使得服务器能够接收客户端连接。 backlog 是连接的最大数量。</p>
-<h1 id="accept"><a href="#accept" class="headerlink" title="accept"></a>accept</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">con_sk,addr=sk.accept()</span><br></pre></td></tr></table></figure>
+<h1 id="accept"><a href="#accept" class="headerlink" title="accept"></a>accept</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">con_sk,addr=sk.accept()<br></code></pre></td></tr></table></figure>
 <p>等待接受一个连接。前提是 socket 必须已经绑定了一个地址。等待是阻塞式的。连接建立成功后返回元组 <code>(connectionsocket,addr)</code>，分别是新的 socket 对象和远端主机的地址。</p>
-<h1 id="send"><a href="#send" class="headerlink" title="send"></a>send</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sk.send(<span class="built_in">bytes</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="send"><a href="#send" class="headerlink" title="send"></a>send</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">sk.send(<span class="hljs-built_in">bytes</span>)<br></code></pre></td></tr></table></figure>
 <p>该 socket 发送数据 bytes。发送前 sk 必须已经 connect 到目的地址。</p>
-<h1 id="sendto"><a href="#sendto" class="headerlink" title="sendto"></a>sendto</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sk.sendto(<span class="built_in">bytes</span>,addr)</span><br></pre></td></tr></table></figure>
+<h1 id="sendto"><a href="#sendto" class="headerlink" title="sendto"></a>sendto</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">sk.sendto(<span class="hljs-built_in">bytes</span>,addr)<br></code></pre></td></tr></table></figure>
 <p>该 socket 向 addr 处发送数据 bytes。</p>
-<h1 id="recv"><a href="#recv" class="headerlink" title="recv"></a>recv</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msg=sk.recv(bufsize)</span><br></pre></td></tr></table></figure>
+<h1 id="recv"><a href="#recv" class="headerlink" title="recv"></a>recv</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">msg=sk.recv(bufsize)<br></code></pre></td></tr></table></figure>
 <p>该 socket 等待接收数据，大小最多为 bufsize 字节。等待是阻塞式的。</p>
-<h1 id="recvfrom"><a href="#recvfrom" class="headerlink" title="recvfrom"></a>recvfrom</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msg,addr=sk.recvfrom(bufsize)</span><br></pre></td></tr></table></figure>
+<h1 id="recvfrom"><a href="#recvfrom" class="headerlink" title="recvfrom"></a>recvfrom</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">msg,addr=sk.recvfrom(bufsize)<br></code></pre></td></tr></table></figure>
 <p>与 recv 的区别在于不仅返回数据，还返回发送方地址。即返回一个 (data,addr) 的元组。</p>
-<h1 id="close"><a href="#close" class="headerlink" title="close"></a>close</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sk.close()</span><br></pre></td></tr></table></figure>
+<h1 id="close"><a href="#close" class="headerlink" title="close"></a>close</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">sk.close()<br></code></pre></td></tr></table></figure>
 <p>关闭 sk。</p>
 
       </div>
@@ -248,7 +248,7 @@
   
   <div class="vhr"></div>
   
-    <a class="post-nav-item-right" href="/2024/06/03/sys/">
+    <a class="post-nav-item-right" href="/2024/06/03/re/">
       <div class="text-align">
         <span class="text-small">下一篇</span>
         <svg t="1670570876164"
@@ -260,7 +260,7 @@
           <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596" />
         </svg>
       </div>
-      sys
+      re
     </a>
   
 </div>

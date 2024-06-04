@@ -168,25 +168,25 @@
         
         <p>argparse 模块用于命令项选项与参数解析。</p>
 <p><strong>示例</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># test.py</span></span><br><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser(description=<span class="string">&#x27;Demo of a argparse&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加参数</span></span><br><span class="line">parser.add_argument(<span class="string">&#x27;--epochs&#x27;</span>,<span class="built_in">type</span>=<span class="built_in">int</span>,default=<span class="number">30</span>,<span class="built_in">help</span>=<span class="string">&quot;This is epochs&quot;</span>)</span><br><span class="line">parser.add_argument(<span class="string">&#x27;--batch&#x27;</span>,<span class="built_in">type</span>=<span class="built_in">int</span>,default=<span class="number">4</span>,<span class="built_in">help</span>=<span class="string">&quot;This is batch&quot;</span>)</span><br><span class="line"></span><br><span class="line">args=parser.parse_args()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(args)</span><br><span class="line"></span><br><span class="line">epochs=args.epochs</span><br><span class="line"></span><br><span class="line">batch=args.batch</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;show <span class="subst">&#123;epochs&#125;</span> <span class="subst">&#123;batch&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># test.py</span><br><span class="hljs-keyword">import</span> argparse<br><br>parser = argparse.ArgumentParser(description=<span class="hljs-string">&#x27;Demo of a argparse&#x27;</span>)<br><br><span class="hljs-comment"># 添加参数</span><br>parser.add_argument(<span class="hljs-string">&#x27;--epochs&#x27;</span>,<span class="hljs-built_in">type</span>=<span class="hljs-built_in">int</span>,default=<span class="hljs-number">30</span>,<span class="hljs-built_in">help</span>=<span class="hljs-string">&quot;This is epochs&quot;</span>)<br>parser.add_argument(<span class="hljs-string">&#x27;--batch&#x27;</span>,<span class="hljs-built_in">type</span>=<span class="hljs-built_in">int</span>,default=<span class="hljs-number">4</span>,<span class="hljs-built_in">help</span>=<span class="hljs-string">&quot;This is batch&quot;</span>)<br><br>args=parser.parse_args()<br><br><span class="hljs-built_in">print</span>(args)<br><br>epochs=args.epochs<br><br>batch=args.batch<br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;show <span class="hljs-subst">&#123;epochs&#125;</span> <span class="hljs-subst">&#123;batch&#125;</span>&quot;</span>)<br></code></pre></td></tr></table></figure>
 
 <p>使用命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python test2.py</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">python test2.py<br></code></pre></td></tr></table></figure>
 
 <p>输出如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Namespace(epochs=30, batch=4)</span><br><span class="line">show 30 4</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Namespace(epochs=30, batch=4)<br>show 30 4<br></code></pre></td></tr></table></figure>
 
 <p>使用命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python test2.py --epochs 100 --batch 10</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">python test2.py --epochs 100 --batch 10<br></code></pre></td></tr></table></figure>
 
 <p>输出如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Namespace(epochs=100, batch=10)</span><br><span class="line">show 100 10</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Namespace(epochs=100, batch=10)<br>show 100 10<br></code></pre></td></tr></table></figure>
 
 <p>使用命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python test2.py -h</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">python test2.py -h<br></code></pre></td></tr></table></figure>
 
 <p>输出如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">usage: test2.py [-h] [--epochs EPOCHS] [--batch BATCH]</span><br><span class="line"></span><br><span class="line">Demo of a argparse</span><br><span class="line"></span><br><span class="line">optional arguments:</span><br><span class="line">  -h, --help       show this help message and exit    </span><br><span class="line">  --epochs EPOCHS  This is epochs</span><br><span class="line">  --batch BATCH    This is batch</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">usage: test2.py [-h] [--epochs EPOCHS] [--batch BATCH]<br><br>Demo of a argparse<br><br>optional arguments:<br>  -h, --help       show this help message and exit    <br>  --epochs EPOCHS  This is epochs<br>  --batch BATCH    This is batch<br></code></pre></td></tr></table></figure>
 
 <p><strong>add_argument 的参数</strong></p>
 <ul>
@@ -262,7 +262,7 @@
   
   <div class="vhr"></div>
   
-    <a class="post-nav-item-right" href="/2024/06/03/copy/">
+    <a class="post-nav-item-right" href="/2024/06/03/functools/">
       <div class="text-align">
         <span class="text-small">下一篇</span>
         <svg t="1670570876164"
@@ -274,7 +274,7 @@
           <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596" />
         </svg>
       </div>
-      copy
+      partial
     </a>
   
 </div>

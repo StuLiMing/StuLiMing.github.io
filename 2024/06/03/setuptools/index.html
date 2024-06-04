@@ -168,7 +168,7 @@
         
         <h2 id="setuptools"><a href="#setuptools" class="headerlink" title="setuptools"></a>setuptools</h2><p>用于打包和分发Python项目</p>
 <h2 id="setup"><a href="#setup" class="headerlink" title="setup"></a>setup</h2><p>用于安装包</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> setuptools <span class="keyword">import</span> setup</span><br><span class="line"></span><br><span class="line">setup(</span><br><span class="line">    name=<span class="string">&quot;ddpm&quot;</span>,</span><br><span class="line">    py_modules=[<span class="string">&quot;ddpm&quot;</span>],</span><br><span class="line">    install_requires=[<span class="string">&quot;torch&quot;</span>, <span class="string">&quot;torchvision&quot;</span>, <span class="string">&quot;einops&quot;</span>, <span class="string">&quot;wandb&quot;</span>, <span class="string">&quot;joblib&quot;</span>],</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> setuptools <span class="hljs-keyword">import</span> setup<br><br>setup(<br>    name=<span class="hljs-string">&quot;ddpm&quot;</span>,<br>    py_modules=[<span class="hljs-string">&quot;ddpm&quot;</span>],<br>    install_requires=[<span class="hljs-string">&quot;torch&quot;</span>, <span class="hljs-string">&quot;torchvision&quot;</span>, <span class="hljs-string">&quot;einops&quot;</span>, <span class="hljs-string">&quot;wandb&quot;</span>, <span class="hljs-string">&quot;joblib&quot;</span>],<br>)<br></code></pre></td></tr></table></figure>
 
 <p>用法：在包含该脚本的目录下运行 <code>pip install .</code></p>
 
@@ -214,7 +214,7 @@
     
     <div class="post-nav">
   
-    <a class="post-nav-item-left" href="/2024/06/03/re/">
+    <a class="post-nav-item-left" href="/2024/06/03/random/">
       <div class="text-align">
         <svg t="1670570876164"
              class="icon"
@@ -225,7 +225,7 @@
         </svg>
         <span class="text-small">上一篇</span>
       </div>
-      <div>re</div>
+      <div>random</div>
     </a>
   
   <div class="vhr"></div>
